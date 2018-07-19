@@ -3,7 +3,9 @@
 
 import residence = require('residence');
 const dashdash = require('dashdash');
+import async = require('async');
 import options from './cli-options';
+import {EVCb} from "./index";
 
 const allowUnknown = process.argv.includes('--allow-unknown');
 const parser = dashdash.createParser({options,allowUnknown});
@@ -25,6 +27,31 @@ if (opts.help) {
 }
 
 
+let root: string, cwd = process.cwd();
+
+if(opts.project_root){
+  root = opts.project_root;
+}
+else{
+  try{
+    root = residence.findProjectRoot(cwd);
+  }
+  catch(err){
+
+  }
+}
 
 
 
+async.autoInject({
+
+
+
+
+
+
+}, (err, results) => {
+
+
+
+});

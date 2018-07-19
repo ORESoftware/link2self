@@ -8,4 +8,4 @@ export const r2gSmokeTest = () => {
 };
 
 
-
+export type EVCb<T> = (err: any, val?: T) => void;
